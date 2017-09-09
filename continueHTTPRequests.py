@@ -3,6 +3,7 @@
 
 import requests
 import time
+import sys
 
 #url to send requests to
 url = 'http://google.com'
@@ -17,5 +18,7 @@ try:
         print('Time Elapsed: ', int(timeElapsed/60), 'minutes', int(timeElapsed%60), 'seconds')
         time.sleep(pauseTime)
         timeElapsed += pauseTime
-except KeyboardInterrupt:
+except KeyboardInterrupt: #terminate script
     print('Terminated')
+except Exception as e:
+  print('Error:', sys.exc_info()[0])
