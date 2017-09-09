@@ -13,8 +13,8 @@ timeElapsed = 0
 
 try:
     while True:
-        requests.get(url)
-        print('Script Running, Ctrl+C to terminate')
+        r = requests.get(url)
+        print('Running, Connection Status:', r.status_code, ', Ctrl+C to terminate')
         print('Time Elapsed: ', int(timeElapsed/60), 'minutes', int(timeElapsed%60), 'seconds')
         time.sleep(pauseTime)
         timeElapsed += pauseTime
